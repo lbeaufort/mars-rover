@@ -1,3 +1,6 @@
 class Direction:
-    def todo():
-        print("implement")
+
+    N = "N"
+    E = "E"
+    W = "W"
+    S = "S"
