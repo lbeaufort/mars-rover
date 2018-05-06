@@ -1,9 +1,11 @@
-from direction import Direction
+import logging
+
+from direction import Direction, North, East, South, West
 from position import Position
 
 
 class Rover:
-    def __init__(self, position, direction):
+    def __init__(self, position=Position(0, 0), direction=Direction.N):
         self.position = position
         self.direction = direction
 
@@ -13,33 +15,12 @@ class Rover:
     def get_direction(self):
         return self.direction
 
-    def turn_right(self):
-
-        if self.direction == "N":
-            self.direction = "E"
-        elif self.direction == "E":
-            self.direction = "S"
-        elif self.direction == "S":
-            self.direction = "W"
-        else:
-            self.direction = "N"
-
-    def turn_left(self):
-        if self.direction == "N":
-            self.direction = "W"
-        elif self.direction == "E":
-            self.direction = "N"
-        elif self.direction == "S":
-            self.direction = "E"
-        else:
-            self.direction = "S"
-
     def change_direction(self, command):
 
         if command == "R":
-            self.turn_right()
+            self.direction = self.direction.turn_right()
         else:
-            self.turn_left()
+            self.direction = self.direction.turn_left()
 
     def move_position(self, command):
 
@@ -50,25 +31,29 @@ class Rover:
 
     def move_forward(self):
 
-        if self.direction == "N":
+        if self.direction == North():
             self.position.y += 1
-        elif self.direction == "E":
+        elif self.direction == East():
             self.position.x += 1
-        elif self.direction == "S":
+        elif self.direction == South():
             self.position.y -= 1
-        else:
+        elif self.direction == West():
             self.position.x -= 1
+        else:
+            print('Invalid direction')
 
     def move_backward(self):
 
-        if self.direction == "N":
+        if self.direction == North():
             self.position.y -= 1
-        elif self.direction == "E":
+        elif self.direction == East():
             self.position.x -= 1
-        elif self.direction == "S":
+        elif self.direction == South():
             self.position.y += 1
-        else:
+        elif self.direction == West():
             self.position.x += 1
+        else:
+            print('Invalid direction')
 
     def execute(self, commands):
 
