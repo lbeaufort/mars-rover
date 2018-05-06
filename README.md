@@ -1,4 +1,10 @@
 # mars-rover-python
+
+## Local development
+Set up a virtual environment - I use [pyenv](https://github.com/pyenv/pyenv-virtualenv)
+
+Install Flask: `pip install Flask`
+
 ## Challenge
 
 You are on a team programming the remotely controlled Mars Rover robot.
