@@ -1,4 +1,6 @@
-# mars-rover-python
+# Mars Rover Challenge
+
+Inspired by [@mfreyre](https://github.com/mfreyre/mars-rover-python)'s object-oriented programming workshop at [Codeland 2018](http://codelandconf.com/). This is a work in progress - feel free to enter an issue or PR!
 
 ## Local development
 Set up a virtual environment - I use [pyenv](https://github.com/pyenv/pyenv-virtualenv)
