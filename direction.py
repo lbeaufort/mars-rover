@@ -21,9 +21,11 @@ class North(Direction):
     """
 
     def turn_left(self):
+        print "Turning left to face West"
         return West()
 
     def turn_right(self):
+        print "Turning right to face East"
         return East()
 
 
@@ -34,9 +36,11 @@ class East(Direction):
   #  print(self.__name__)
 
     def turn_left(self):
+        print "Turning left to face North"
         return North()
 
     def turn_right(self):
+        print "Turning right to face South"
         return South()
 
 
@@ -45,9 +49,11 @@ class South(Direction):
       E <- S -> W
     """
     def turn_left(self):
+        print "Turning left to face East"
         return East()
 
     def turn_right(self):
+        print "Turning right to face West"
         return West()
 
 
@@ -56,9 +62,11 @@ class West(Direction):
       N <- W -> S
     """
     def turn_left(self):
+        print "Turning left to face South"
         return South()
 
     def turn_right(self):
+        print "Turning right to face North"
         return North()
 
 Direction.N = North()
